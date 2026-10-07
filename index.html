@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Date 💙</title>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:Arial,Helvetica,sans-serif;color:#123a62;
+    background:linear-gradient(180deg,#e9f7ff 0%,#f8fcff 45%,#dff2ff 100%);
+    overflow-x:hidden;
+  }
+  .heart{position:fixed;bottom:-30px;font-size:22px;opacity:.65;animation:float 8s linear infinite;z-index:0}
+  .h1{left:8%;animation-delay:1s}.h2{left:25%;animation-delay:4s}.h3{left:48%;animation-delay:2s}
+  .h4{left:70%;animation-delay:6s}.h5{left:88%;animation-delay:3s}
+  @keyframes float{0%{transform:translateY(0) scale(.8);opacity:0}
+    15%{opacity:.7}100%{transform:translateY(-110vh) rotate(25deg) scale(1.25);opacity:0}}
+  .wrap{max-width:1050px;margin:auto;padding:22px;position:relative;z-index:1}
+  .hero{
+    min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;
+    padding:50px 18px;position:relative
+  }
+  .hero-card{
+    width:min(760px,100%);background:rgba(255,255,255,.78);backdrop-filter:blur(12px);
+    border:2px solid #b8e1ff;border-radius:34px;padding:48px 25px;
+    box-shadow:0 20px 60px rgba(41,119,178,.16)
+  }
+  .tiny{letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:700;color:#4b91c7}
+  h1{font-size:clamp(42px,9vw,82px);margin:12px 0;color:#176aa5}
+  .subtitle{font-size:18px;color:#527695;max-width:580px;margin:0 auto 25px;line-height:1.7}
+  .heart-big{font-size:55px;animation:pulse 1.5s infinite}
+  @keyframes pulse{50%{transform:scale(1.15)}}
+  .btn{
+    display:inline-block;padding:13px 22px;border-radius:999px;background:#2c8dcc;color:#fff;
+    text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(44,141,204,.25)
+  }
+  section{margin:28px 0}
+  .section-title{text-align:center;font-size:30px;color:#176aa5;margin:38px 0 18px}
+  .datebox{
+    background:#fff;border:2px solid #c8e8ff;border-radius:25px;padding:22px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:15px;box-shadow:0 12px 35px rgba(41,119,178,.10)
+  }
+  .info{background:#eef9ff;border-radius:18px;padding:18px;text-align:center}
+  .icon{font-size:28px}.label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#6693b4}
+  .value{font-size:18px;font-weight:800;margin-top:6px;color:#174e79}\n  input{margin-top:8px;padding:9px 10px;border:1px solid #a9dbf7;border-radius:12px;background:#fff;color:#174e79;font-weight:700;max-width:100%}
+  .tip{text-align:center;color:#6a879d;font-size:13px;margin:12px}
+  .places{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{background:#fff;border-radius:26px;overflow:hidden;border:2px solid #c8e8ff;
+    box-shadow:0 12px 35px rgba(41,119,178,.12);transition:.25s}
+  .card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(41,119,178,.18)}
+  .photo{width:100%;height:220px;object-fit:cover;display:block}
+  .content{padding:20px}.content h3{margin:0 0 8px;color:#176aa5;font-size:22px}
+  .content p{line-height:1.6;color:#5b7890;font-size:14px;min-height:68px}
+  .map{
+    display:inline-block;text-decoration:none;background:#e6f6ff;color:#1874ae;
+    border:1px solid #a9dbf7;padding:9px 13px;border-radius:999px;font-size:13px;font-weight:700
+  }
+  .love{
+    text-align:center;background:#fff;border:2px solid #c8e8ff;border-radius:28px;
+    padding:30px;box-shadow:0 12px 35px rgba(41,119,178,.10)
+  }
+  .love p{font-size:19px;line-height:1.8;color:#426a86}
+  footer{text-align:center;padding:40px 10px;color:#7090a7;font-size:13px}
+  @media(max-width:800px){
+    .datebox,.places{grid-template-columns:1fr}
+    .hero{min-height:70vh}.hero-card{padding:38px 20px}
+    .photo{height:240px}
+  }
+</style>
+</head>
+<body>
+  <span class="heart h1">💙</span><span class="heart h2">♡</span><span class="heart h3">💙</span>
+  <span class="heart h4">♡</span><span class="heart h5">💙</span>
+
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-card">
+        <div class="heart-big">💙</div>
+        <div class="tiny">a little date invitation</div>
+        <h1>Our Little Date</h1>
+        <p class="subtitle">
+          One day, three cute places, lots of food, fun, photos, and memories.
+          Ready to make another favorite day together? ♡
+        </p>
+        <a class="btn" href="#itinerary">See Our Date ✨</a>
+      </div>
+    </header>
+
+    <section id="itinerary">
+      <h2 class="section-title">💙 Date Details</h2>
+      <div class="datebox">
+        <div class="info"><div class="icon">📅</div><div class="label">Date</div>
+          <input id="dateInput" type="date" value="2026-10-10" onchange="updateDate()">
+          <div id="dateValue" class="value">October 10, 2026</div>
+        </div>
+        <div class="info"><div class="icon">⏰</div><div class="label">Time</div>
+          <input id="timeInput" type="time" value="10:00" onchange="updateTime()">
+          <div id="timeValue" class="value">10:00 AM onwards</div>
+        </div>
+        <div class="info"><div class="icon">📍</div><div class="label">Place</div>
+          <div class="value">Metro Manila Date Day</div></div>
+      </div>
+      <div class="tip">Choose your date and time above. The displayed details update automatically. 💙</div>
+    </section>
+
+    <section>
+      <h2 class="section-title">🌷 Our Little Itinerary</h2>
+      <div class="places">
+
+        <article class="card">
+          <img class="photo" src="https://primer.ph/eat/wp-content/uploads/sites/2/2025/01/gala-food-park-curryhouse-1536x1152.jpg" alt="Gala Food Park">
+          <div class="content">
+            <h3>🍜 Gala Food Park</h3>
+            <p>Japanese-inspired food, cute interiors, photo spots, and lots of food to share. Perfect first stop for our date.</p>
+            <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Gala+Food+Park+Pasay">📌 Open Location</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="photo" src="https://static.wixstatic.com/media/5eface_c5df2bdc855a496fb4e4c7d14bdf3283~mv2.jpg/v1/fill/w_596%2Ch_448%2Cal_c%2Cq_80%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/5eface_c5df2bdc855a496fb4e4c7d14bdf3283~mv2.jpg" alt="Star City">
+          <div class="content">
+            <h3>🎡 Star City</h3>
+            <p>Rides, lights, laughs, and a little bit of thrill. Let's make some fun memories together.</p>
+            <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Star+City+Pasay">📌 Open Location</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="photo" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/La_Mesa_Ecopark_from_Pearl_Drive_May_3%2C_2026_entrance_to_main_park_12.jpg" alt="La Mesa Ecopark entrance and Mini Museum">
+          <div class="content">
+            <h3>🌿 La Mesa Eco Park</h3>
+            <p>A peaceful nature stop for walking, talking, taking photos, and slowing down together.</p>
+            <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=La+Mesa+Ecopark+Quezon+City">📌 Open Location</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="love">
+        <div style="font-size:40px">🫶💙</div>
+        <h2 style="color:#176aa5">A Day With You</h2>
+        <p>
+          “Anywhere is a good place when I'm with you.<br>
+          Let's eat, explore, laugh, take too many pictures,<br>
+          and make another little memory together.” 💙
+        </p>
+        <div style="font-size:25px">♡ ♡ ♡</div>
+      </div>
+    </section>
+
+    <footer>
+      Made with love, blue hearts, and a little bit of kilig. 💙
+      <br><br>
+      Location information checked online: Gala Food Park, Star City, and La Mesa Ecopark.
+      <br>La Mesa photo: P1898 / Wikimedia Commons, CC BY 4.0.
+    </footer>
+  </div>
+
+<script>
+function updateDate(){
+  const v=document.getElementById('dateInput').value;
+  if(!v)return;
+  const d=new Date(v+'T00:00:00');
+  document.getElementById('dateValue').textContent=d.toLocaleDateString('en-US',{
+    month:'long',day:'numeric',year:'numeric'
+  });
+}
+function updateTime(){
+  const v=document.getElementById('timeInput').value;
+  if(!v)return;
+  const [h,m]=v.split(':').map(Number);
+  const ampm=h>=12?'PM':'AM';
+  const hh=(h%12)||12;
+  document.getElementById('timeValue').textContent=
+    `${hh}:${String(m).padStart(2,'0')} ${ampm} onwards`;
+}
+updateDate(); updateTime();
+</script>
+</body>
+</html>
